@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RgImdbXF.Android", "RgImdbXF\RgImdbXF.Android\RgImdbXF.Android.csproj", "{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RgImdbXF", "RgImdbXF\RgImdbXF\RgImdbXF.csproj", "{5FA2E341-DB1A-47CA-8FF1-C139AE3153A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{890072F2-E59A-4F04-AF56-88D6D5F2A482}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Screenshots", "Screenshots", "{7AA199BC-E4F8-424B-9A13-FD99130CD5FA}"
+	ProjectSection(SolutionItems) = preProject
+		RgImdbXF\RgImdbXF\Screenshots\RgTmdbXF_MovieDetailPage.png = RgImdbXF\RgImdbXF\Screenshots\RgTmdbXF_MovieDetailPage.png
+		RgImdbXF\RgImdbXF\Screenshots\RgTmdbXF_SearchMoviePage.png = RgImdbXF\RgImdbXF\Screenshots\RgTmdbXF_SearchMoviePage.png
+		RgImdbXF\RgImdbXF\Screenshots\RgTmdbXF_SplashPage.png = RgImdbXF\RgImdbXF\Screenshots\RgTmdbXF_SplashPage.png
+		RgImdbXF\RgImdbXF\Screenshots\RgTmdbXF_UpcomingMoviePage.png = RgImdbXF\RgImdbXF\Screenshots\RgTmdbXF_UpcomingMoviePage.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5FA2E341-DB1A-47CA-8FF1-C139AE3153A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FA2E341-DB1A-47CA-8FF1-C139AE3153A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FA2E341-DB1A-47CA-8FF1-C139AE3153A2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5FA2E341-DB1A-47CA-8FF1-C139AE3153A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FA2E341-DB1A-47CA-8FF1-C139AE3153A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FA2E341-DB1A-47CA-8FF1-C139AE3153A2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91A7195B-190B-465D-8830-A56708A7A2FE}
+	EndGlobalSection
+EndGlobal

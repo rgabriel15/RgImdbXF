@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:scroll="clr-namespace:Xamarin.Forms.Extended;assembly=Xamarin.Forms.Extended.InfiniteScrolling"
+             xmlns:b="clr-namespace:RgImdbXF.Behaviors"
+             x:Class="RgImdbXF.Views.SearchMoviePage"
+             Title="{Binding Title}">
+    <ContentPage.Content>
+        <StackLayout Spacing="2">
+            <SearchBar Text="{Binding SearchBar_Text}"
+                       SearchCommand="{Binding SearchBar_SearchCommand}">
+                <SearchBar.Behaviors>
+                    <b:SearchBarBehavior/>
+                </SearchBar.Behaviors>
+            </SearchBar>
+            
+            <ListView ItemsSource="{Binding ListView_ItemsSource}"
+                      VerticalOptions="FillAndExpand"
+                      HasUnevenRows="true"
+                      RefreshCommand="{Binding ListView_RefreshCommand}"
+                      IsPullToRefreshEnabled="true"
+                      IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                      CachingStrategy="RecycleElement"
+                      SelectedItem="{Binding ListView_SelectedItem, Mode=TwoWay}">
+                
+                <ListView.Behaviors>
+                    <scroll:InfiniteScrollBehavior />
+                </ListView.Behaviors>
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.Row="0"
+                                       Grid.Column="0"
+                                       Grid.RowSpan="3"
+                                       Source="{Binding BackdropFullPath}"/>
+
+                                <Label Grid.Row="0"
+                                       Grid.Column="1"
+                                       Text="{Binding OriginalTitle}"
+                                       LineBreakMode="NoWrap"
+                                       FontSize="16"/>
+
+                                <Label Grid.Row="1"
+                                       Grid.Column="1"
+                                       Text="{Binding GenreCollectionString}"
+                                       LineBreakMode="NoWrap"
+                                       FontSize="13"/>
+
+                                <Label Grid.Row="2"
+                                       Grid.Column="1"
+                                       Text="{Binding ReleaseDate}"
+                                       LineBreakMode="NoWrap"
+                                       FontSize="13"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

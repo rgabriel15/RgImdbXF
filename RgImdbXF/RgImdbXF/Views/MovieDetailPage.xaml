@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RgImdbXF.Views.MovieDetailPage"
+             Title="{Binding Title}">
+    <ScrollView Padding="10">
+        <StackLayout Padding="10">
+            <Image Source="{Binding Movie.PosterFullPath}"
+                   VerticalOptions="StartAndExpand"
+                   HorizontalOptions="FillAndExpand"/>
+            <Label Text="{Binding Movie.OriginalTitle}"
+                   FontSize="Medium"/>
+            <Label Text="{Binding Movie.GenreCollectionString}"
+                   FontSize="Small"/>
+            <Label Text="{Binding Movie.ReleaseDate}"
+                   FontSize="Small"/>
+            <Label Text="{Binding Movie.Overview}"
+                   FontSize="Small"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
