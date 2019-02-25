@@ -2,7 +2,6 @@
 using RgImdbXF.Services;
 using RgImdbXF.Views;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -16,6 +15,7 @@ namespace RgImdbXF.ViewModels
 
         #region Variables
         private static UpcomingMovieService _upcomingMovieService = null;
+        private uint totalPages = 0;
         #endregion
 
         #region Properties
@@ -51,10 +51,19 @@ namespace RgImdbXF.ViewModels
                             return null;
 
                         IsBusy = true;
-                        var page = ListView_ItemsSource.Count / PageSize;
-                        var collection = await GetMovieCollectionAsync(page + 1);
+                        var page = (uint)(ListView_ItemsSource.Count / PageSize) + 1;
+
+                        if (totalPages > 0
+                            && page >= totalPages)
+                        {
+                            IsBusy = false;
+                            return null;
+                        }
+
+                        var model = await GetMovieCollectionAsync(page);
+                        totalPages = (uint)model.TotalPages;
                         IsBusy = false;
-                        return collection;
+                        return model.MovieCollection;
                     }
                     catch (Exception ex)
                     {
@@ -70,10 +79,10 @@ namespace RgImdbXF.ViewModels
             _ExecuteListView_RefreshCommand_HandlerAsync();
         }
 
-        private async Task<IEnumerable<MovieModel>> GetMovieCollectionAsync(int page = 1)
+        private async Task<UpcomingMovieModel> GetMovieCollectionAsync(uint page = 1)
         {
             var model = await _upcomingMovieService.GetAsync(page);
-            return model?.MovieCollection;
+            return model;
         }
 
         private async Task ExecuteListView_RefreshCommand_HandlerAsync()
@@ -85,8 +94,8 @@ namespace RgImdbXF.ViewModels
 
                 IsBusy = true;
                 ListView_ItemsSource.Clear();
-                var collection = await GetMovieCollectionAsync();
-                ListView_ItemsSource.AddRange(collection);
+                var model = await GetMovieCollectionAsync();
+                ListView_ItemsSource.AddRange(model.MovieCollection);
 
                 IsBusy = false;
             }

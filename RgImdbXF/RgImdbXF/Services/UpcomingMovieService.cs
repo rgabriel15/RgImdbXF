@@ -12,7 +12,7 @@ namespace RgImdbXF.Services
         #endregion
 
         #region Functions
-        internal async Task<UpcomingMovieModel> GetAsync(int page = 1)
+        internal async Task<UpcomingMovieModel> GetAsync(uint page = 1)
         {
             if (page < PageMin
                 || page > PageMax)

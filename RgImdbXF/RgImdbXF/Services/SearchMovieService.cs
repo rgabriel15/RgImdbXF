@@ -15,7 +15,7 @@ namespace RgImdbXF.Services
         #endregion
 
         #region Functions
-        internal async Task<SearchMovieModel> GetAsync(string query, int page = 1)
+        internal async Task<SearchMovieModel> GetAsync(string query, uint page = 1)
         {
             if (string.IsNullOrWhiteSpace(query))
                 throw new ArgumentException("query");
